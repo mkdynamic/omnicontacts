@@ -34,7 +34,8 @@ module OmniContacts
           :oauth_timestamp => timestamp,
           :oauth_token => access_token,
           :oauth_version => OmniContacts::Authorization::OAuth1::OAUTH_VERSION,
-          :view => "compact"
+          :view => "compact",
+          :count => "max"
         }
         contacts_url = "http://#{@contacts_host}#{contacts_path}"
         params["oauth_signature"] = oauth_signature("GET", contacts_url, params, access_token_secret)
